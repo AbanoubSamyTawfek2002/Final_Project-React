@@ -5,6 +5,7 @@ import { CartContext } from '../Context/CartContext';
 import { CardLikeContext } from '../Context/CarLikeContext';
 import "./Navbar.module.css";
 import { initFlowbite } from 'flowbite';
+import imgcart from "../../assets/WhatsApp Image 2025-05-05 at 17.33.31_366f6ce7.png";
 
 export default function Navbar() {
   let { UserLogin, setUserLogin } = useContext(UserContext);
@@ -12,7 +13,7 @@ export default function Navbar() {
   let { wishlistCount } = useContext(CardLikeContext);
   let navigate = useNavigate();
 
-  // تهيئة Flowbite عند تحميل المكون
+  
   useEffect(() => {
     initFlowbite();
   }, []);
@@ -26,13 +27,12 @@ export default function Navbar() {
   return (
     <>
       <nav className="bg-[#F8F9FA] border-gray-200 fixed top-0 left-0 right-0 z-50 shadow-md">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-            <i className="fa-solid fa-cart-shopping fa-xl icon-cart"></i>
-            <span className="self-center text-2xl font-semibold whitespace-nowrap">
-              Fresh Cart
-            </span>
-          </Link>
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
+        <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse mx-auto px-4">
+  <img src={imgcart} alt="Fresh Cart Logo" className="w-40 h-24" />
+</Link>
+
+          
 
           <div className="flex items-center md:order-3 space-x-3">
             {UserLogin && (
